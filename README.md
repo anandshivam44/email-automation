@@ -32,7 +32,9 @@ If You get a callback as "Hello World", your server has started successfully on 
 ## How to Test the API
 ### Without attachment
 To send an email to a person copy-paste this JSON Tree. This is the simplest payload. Every field is mandatory. Replace ``` emailMessage ``` with your HTML Body and ``` email ``` with an email id you want to send an email.
-###### Sample Input
+
+
+### Sample Input
 ```js
 {
    "userData": [
@@ -48,7 +50,8 @@ To send an email to a person copy-paste this JSON Tree. This is the simplest pay
 }
 ```
  
-###### Sample Output
+
+### Sample Output
 ```bash
 {
    "status": 200,
@@ -62,10 +65,14 @@ To send an email to a person copy-paste this JSON Tree. This is the simplest pay
    }
 }
 ```
-###### Check Your MailBox </br>
+
+
+### Check Your MailBox </br>
 Check your mailbox to see the email you have sent. Emails are put in a queue by SendGrid, they may take some time to arrive or decide to fail.
+
+
  
-##### More complex Input JSON samples
+### More complex Input JSON samples
 ```bash
 {
    "userData": [
@@ -87,7 +94,12 @@ Check your mailbox to see the email you have sent. Emails are put in a queue by 
    "emailMessage": "<html><head><title></title></head><body>Hello {{name}} ,<br /><br/>Results are out<br /><br/><br /><br/>You are designated as {{status}} This is the raw body<br /><br/></body></html>"
 }
 ```
-### With attachment [PDF's]
+
+
+
+
+
+## With attachment [PDF's]
 Attachments can se sent in an API using form-data and binary data. In binary data method one attachment can be sent with no json body. Here form-data is used.
  
 The easiest way to test the API with attachment
@@ -107,9 +119,13 @@ userData[0][email] | EMAIL@PROVIDER.COM |
 userData[0][name] | Ram |
 userData[0][status] | PASS |
  
+
+
 ![with attachment image](image_2.png)
  
-##### More complex sample imput
+
+
+### More complex sample imput
 Key | Value |
 --- | --- |
 binaryFile | [CHOOSE FILE]] |
@@ -126,6 +142,7 @@ userData[1][cc] | EMAI5L@PROVIDER.COM |
 userData[1][cc] | EMAIL6@PROVIDER.COM |
 userData[1][bcc] | EMAIL7@PROVIDER.COM |
 userData[1][bcc] | EMAIL8@PROVIDER.COM |
+ 
  
  
 ## How to work with TypeScript and Node
