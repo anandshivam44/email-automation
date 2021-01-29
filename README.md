@@ -1,0 +1,2 @@
+# Prerequisites
+node and npm
