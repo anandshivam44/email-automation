@@ -30,6 +30,10 @@ sgMail.setSubstitutionWrappers('{{', '}}');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+app.get('/', function (req, res) {
+   res.send("Hello world!");
+});
+
 app.post('/test', upload.single('binaryFile'), function (req, res) {
 
    var start_time = Math.floor(new Date().getTime() / 1000);

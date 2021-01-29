@@ -22,10 +22,13 @@ var storage = multer.diskStorage({
     }
 });
 var upload = multer({ storage: storage });
-sgMail.setApiKey('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');
+sgMail.setApiKey(process.env.API_KEY);
 sgMail.setSubstitutionWrappers('{{', '}}');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.get('/', function (req, res) {
+    res.send("Hello world!");
+});
 app.post('/test', upload.single('binaryFile'), function (req, res) {
     var start_time = Math.floor(new Date().getTime() / 1000);
     start_time -= 60;
@@ -142,7 +145,7 @@ app.post('/test', upload.single('binaryFile'), function (req, res) {
         "port": null,
         "path": "/v3/suppression/bounces?end_time=" + end_time + "&start_time=" + start_time,
         "headers": {
-            "authorization": "Bearer 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",
+            "authorization": "Bearer " + process.env.API_KEY,
             "accept": "application/json"
         }
     };
