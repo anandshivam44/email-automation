@@ -30,6 +30,9 @@ node index.js
 If You get a callback as "Hello World", your server has started successfully on localhost 
  
 ## How to Test the API
+Endpont to send mail is in the format https://localhost:5000/test
+
+
 ### Without attachment
 To send an email to a person copy-paste this JSON Tree. This is the simplest payload. Every field is mandatory. Replace ``` emailMessage ``` with your HTML Body and ``` email ``` with an email id you want to send an email.
 
@@ -143,7 +146,7 @@ userData[1][cc] | EMAIL6@PROVIDER.COM |
 userData[1][bcc] | EMAIL7@PROVIDER.COM |
 userData[1][bcc] | EMAIL8@PROVIDER.COM |
  
- 
+
  
 ## How to work with TypeScript and Node
 To compile your typescript file to javascript you must have typescript installed. To install TypeScript
